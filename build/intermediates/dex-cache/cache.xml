@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/guilherme/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.1/support-annotations-25.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
+        <dex dex="/home/guilherme/dev/android/android-MessagingService/Application/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.1_4a5c45e67ce09bbe2e547e019419f1c993b6f2a3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guilherme/dev/android/android-MessagingService/Application/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="91ae623de0378564e6a9c6d20b60517a7bbac443">
+        <dex dex="/home/guilherme/dev/android/android-MessagingService/Application/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_65f079a23293bc3a1a0b7cda1ee4a0b6b79aec10/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guilherme/.android/build-cache/5d36bd775919e73454d23ed3965014beb3979884/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="058253c7da6cf5cb545922d07fcc2cd19d5d0ce1">
+        <dex dex="/home/guilherme/dev/android/android-MessagingService/Application/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5a29a77414b9f404cf2b5b894457873cf66bbebc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guilherme/.android/build-cache/b1db82bb45847e06ee0b054deeb7ab9d60def6ca/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="/home/guilherme/dev/android/android-MessagingService/Application/build/intermediates/transforms/dex/debug/folders/1000/10/classes_22edc49ebe4382763ebed573e1bdfaa803c0f05e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guilherme/.android/build-cache/c1a13a56b1cd954dc9c109295d0f50d80768d8c2/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a8ae156c2726ac9c56daaf4b49452ec2cdb7bba9">
+        <dex dex="/home/guilherme/dev/android/android-MessagingService/Application/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1f7c5f1e382fa672807837dbda0925037d3508b4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guilherme/.android/build-cache/abebd68f20e6c18b876b2467e9e26bca46bcc5c4/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="/home/guilherme/dev/android/android-MessagingService/Application/build/intermediates/transforms/dex/debug/folders/1000/10/classes_105ae993e72b0c78508658cace991ac9220e3047/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guilherme/.android/build-cache/fdf42a2066b38af5b450768f03ff579b9f4b7907/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="/home/guilherme/dev/android/android-MessagingService/Application/build/intermediates/transforms/dex/debug/folders/1000/10/classes_04b630ef7fde14b9a3743a92129eef78b67584b3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guilherme/dev/android/android-MessagingService/Application/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="12920f9016b8b05acbc2af7cdc13cef6946fe7d3">
+        <dex dex="/home/guilherme/dev/android/android-MessagingService/Application/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_cf10d9b4c4aa9b20502f42d2cdad4576670232cd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guilherme/.android/build-cache/d8472d45e46d1c5299a91ad5042288d5d322c95a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/guilherme/dev/android/android-MessagingService/Application/build/intermediates/transforms/dex/debug/folders/1000/10/classes_bd233cadcee45a012341f0968f0efc98fdf17f67/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guilherme/.android/build-cache/ebeeb6e6d980edf7209c7a4c3183ed83e8e07218/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="/home/guilherme/dev/android/android-MessagingService/Application/build/intermediates/transforms/dex/debug/folders/1000/10/classes_62a2b0ef74057807829781e1df9ff07702dca279/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guilherme/.android/build-cache/e105c12e36d69fb3f8269261e2fc7af6ae0e6aa1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="/home/guilherme/dev/android/android-MessagingService/Application/build/intermediates/transforms/dex/debug/folders/1000/10/classes_942df9786a05b429c81def00d584b5c3625b2911/classes.dex" />
+    </item>
+
+</items>

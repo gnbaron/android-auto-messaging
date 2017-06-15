@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/merged/debug/drawable-xhdpi/notification_icon.png",
+        "source": "/home/guilherme/dev/android/android-auto-messaging/Application/src/main/res/drawable-xhdpi/notification_icon.png"
+    },
+    {
+        "merged": "/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/merged/debug/drawable-xhdpi/ic_launcher.png",
+        "source": "/home/guilherme/dev/android/android-auto-messaging/Application/src/main/res/drawable-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/merged/debug/drawable-xhdpi/android_contact.png",
+        "source": "/home/guilherme/dev/android/android-auto-messaging/Application/src/main/res/drawable-xhdpi/android_contact.png"
+    }
+]
