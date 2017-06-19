@@ -11,35 +11,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1579b25f-7534-42e8-bc53-db2d178bc2fe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/src/main/java/auto/app/messaging/ArticleList.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Application/src/main/java/auto/app/messaging/News.java" afterPath="$PROJECT_DIR$/Application/src/main/java/auto/app/messaging/Article.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.4.1/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/3.4.1/fileContent/fileContent.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/3.4.1/taskHistory/taskHistory.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/auto/app/messaging/AppFragment.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/auto/app/messaging/AppFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/auto/app/messaging/MessageReplyReceiver.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/auto/app/messaging/MessageReplyReceiver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/auto/app/messaging/MessagingService.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/classes/debug/auto/app/messaging/MessagingService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/incremental-verifier/debug/auto/app/messaging/AppFragment.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/incremental-verifier/debug/auto/app/messaging/AppFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/incremental-verifier/debug/auto/app/messaging/MessageReplyReceiver.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/incremental-verifier/debug/auto/app/messaging/MessageReplyReceiver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/incremental-verifier/debug/auto/app/messaging/MessagingService.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/incremental-verifier/debug/auto/app/messaging/MessagingService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/split-apk/debug/slices/slice_9.apk" afterPath="$PROJECT_DIR$/Application/build/intermediates/split-apk/debug/slices/slice_9.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9/classes.dex" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/instantRun/debug/folders/1/5/main/auto/app/messaging/AppFragment.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/instantRun/debug/folders/1/5/main/auto/app/messaging/AppFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/instantRun/debug/folders/1/5/main/auto/app/messaging/MessageReplyReceiver.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/instantRun/debug/folders/1/5/main/auto/app/messaging/MessageReplyReceiver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/instantRun/debug/folders/1/5/main/auto/app/messaging/MessagingService.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/instantRun/debug/folders/1/5/main/auto/app/messaging/MessagingService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/auto/app/messaging/AppFragment.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/auto/app/messaging/AppFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/auto/app/messaging/MessageReplyReceiver.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/auto/app/messaging/MessageReplyReceiver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/auto/app/messaging/MessagingService.class" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/auto/app/messaging/MessagingService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Application.iml" afterPath="$PROJECT_DIR$/Application/Application.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/instant-run-support/debug/package_slice_9/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/Application/build/intermediates/instant-run-support/debug/package_slice_9/dex-renamer-state.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/restart-dex/debug/build-info.xml" afterPath="$PROJECT_DIR$/Application/build/intermediates/restart-dex/debug/build-info.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/buildId.txt" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/buildId.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/java/auto/app/messaging/AppFragment.java" afterPath="$PROJECT_DIR$/Application/src/main/java/auto/app/messaging/AppFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/java/auto/app/messaging/MessageReplyReceiver.java" afterPath="$PROJECT_DIR$/Application/src/main/java/auto/app/messaging/MessageReplyReceiver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/java/auto/app/messaging/MessagingService.java" afterPath="$PROJECT_DIR$/Application/src/main/java/auto/app/messaging/MessagingService.java" />
     </list>
     <ignored path="android-MessagingService.iws" />
@@ -75,11 +60,10 @@
       <file leaf-file-name="AppFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/src/main/java/auto/app/messaging/AppFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+            <state relative-caret-position="360">
+              <caret line="116" column="17" selection-start-line="116" selection-start-column="17" selection-end-line="116" selection-end-column="17" />
               <folding>
-                <element signature="e#0#6220#0" expanded="false" />
-                <marker date="1497903725308" expanded="true" signature="2951:6217" ph="{...}" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,11 +72,11 @@
       <file leaf-file-name="MessagingService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/src/main/java/auto/app/messaging/MessagingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="149" column="44" selection-start-line="149" selection-start-column="44" selection-end-line="149" selection-end-column="44" />
+            <state relative-caret-position="135">
+              <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
               <folding>
-                <element signature="e#5300#5344#0" expanded="true" />
-                <element signature="e#5590#5634#0" expanded="true" />
+                <element signature="e#5384#5428#0" expanded="true" />
+                <element signature="e#5674#5718#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2314,21 +2298,12 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/auto/app/messaging/AppFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
           <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
           <folding>
-            <element signature="e#0#6220#0" expanded="false" />
-            <marker date="1497903725308" expanded="true" signature="2951:6217" ph="{...}" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2364,8 +2339,8 @@
         <state relative-caret-position="1335">
           <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
           <folding>
-            <element signature="e#5300#5344#0" expanded="true" />
-            <element signature="e#5590#5634#0" expanded="true" />
+            <element signature="e#5384#5428#0" expanded="true" />
+            <element signature="e#5674#5718#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2402,8 +2377,7 @@
         <state relative-caret-position="1260">
           <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
           <folding>
-            <element signature="e#0#6220#0" expanded="false" />
-            <marker date="1497903725308" expanded="true" signature="2951:6217" ph="{...}" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2429,8 +2403,8 @@
         <state relative-caret-position="90">
           <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
           <folding>
-            <element signature="e#5300#5344#0" expanded="true" />
-            <element signature="e#5590#5634#0" expanded="true" />
+            <element signature="e#5384#5428#0" expanded="true" />
+            <element signature="e#5674#5718#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2660,17 +2634,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/auto/app/messaging/AppFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#6220#0" expanded="false" />
-            <marker date="1497903725308" expanded="true" signature="2951:6217" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/auto/app/messaging/MessageReplyReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -2683,13 +2646,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/auto/app/messaging/AppFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="116" column="17" selection-start-line="116" selection-start-column="17" selection-end-line="116" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-24/android.jar!/android/content/ContextWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
+          <folding>
+            <element signature="e#2264#2265#0" expanded="true" />
+            <element signature="e#2315#2316#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/auto/app/messaging/MessagingService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="149" column="44" selection-start-line="149" selection-start-column="44" selection-end-line="149" selection-end-column="44" />
+        <state relative-caret-position="135">
+          <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
           <folding>
-            <element signature="e#5300#5344#0" expanded="true" />
-            <element signature="e#5590#5634#0" expanded="true" />
+            <element signature="e#5384#5428#0" expanded="true" />
+            <element signature="e#5674#5718#0" expanded="true" />
           </folding>
         </state>
       </provider>

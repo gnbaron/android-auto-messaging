@@ -6,29 +6,22 @@
     density="xhdpi"
     format="10"
     plugin-version="2.3.2"
-    timestamp="1497907875864"
+    timestamp="1497908665754"
     token="-6593185886740839201"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="186" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="11" />
+        duration="0" />
     <task
         name="verifier"
-        duration="2" />
-
-    <artifact
-        location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="/home/guilherme/dev/android/android-auto-messaging/Application/build/outputs/apk/Application-debug.apk"
-        type="SPLIT_MAIN" />
+        duration="0" />
 
     <build
         build-mode="FULL"
@@ -73,7 +66,7 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1497907875864"
+        timestamp="1497908574938"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_9.apk"
@@ -82,5 +75,9 @@
             location="/home/guilherme/dev/android/android-auto-messaging/Application/build/outputs/apk/Application-debug.apk"
             type="SPLIT_MAIN" />
     </build>
+    <build
+        build-mode="COLD"
+        timestamp="1497908665754"
+        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

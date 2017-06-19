@@ -71,8 +71,10 @@ public class MessagingService extends Service {
 
     private void sendWelcome(ArticleList articles) {
 
-        Intent replyContent = new Intent().addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES)
+        Intent replyContent = new Intent()
+                .addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES)
                 .setAction(REPLY_ACTION)
+                .putExtra(CONVERSATION_ID, CONVERSATION_NUMBER_ID)
                 .putExtra("news", articles);
 
         PendingIntent replyIntent = PendingIntent.getBroadcast(
@@ -142,8 +144,8 @@ public class MessagingService extends Service {
         UnreadConversation.Builder unreadConvBuilder =
                 new UnreadConversation.Builder(CONVERSATION_NAME)
                 .setLatestTimestamp(timestamp)
-                .setReplyAction(replyIntent, remoteInput)
-                .setReadPendingIntent(readPendingIntent); //TODO testar para ver se não é preciso realmente usar uma read intent
+                .setReadPendingIntent(readPendingIntent)
+                .setReplyAction(replyIntent, remoteInput); //TODO testar para ver se não é preciso realmente usar uma read intent
 
         StringBuilder message = new StringBuilder();
         for(String m : messages) {
