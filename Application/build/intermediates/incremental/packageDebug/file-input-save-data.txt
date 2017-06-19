@@ -1,0 +1,36 @@
+#Internal package file, do not edit.
+#Fri Jun 16 14:17:09 BRT 2017
+2.base=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_
+5.file=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_/res/layout-land/fragment_message_me.xml
+5.set=ANDROID_RESOURCE
+3.base=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_
+6.file=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_/resources.arsc
+2.set=ANDROID_RESOURCE
+10.set=ANDROID_RESOURCE
+10.file=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_/res/xml/automotive_app_desc.xml
+4.base=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_
+7.file=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_5d9e4f9dccfcd1c5e243936957cdb7978e71a6da/classes.dex
+7.set=DEX
+count=11
+0.file=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_7090d63c411e70891d8930a5758b21438754d30b/classes.dex
+5.base=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_
+8.file=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/ic_launcher.png
+4.set=ANDROID_RESOURCE
+6.base=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_
+1.file=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_/AndroidManifest.xml
+9.set=ANDROID_RESOURCE
+9.file=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/android_contact.png
+10.base=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_
+1.set=ANDROID_RESOURCE
+7.base=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_5d9e4f9dccfcd1c5e243936957cdb7978e71a6da
+2.file=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/notification_icon.png
+6.set=ANDROID_RESOURCE
+0.base=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_7090d63c411e70891d8930a5758b21438754d30b
+8.base=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_
+3.file=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_/res/layout/fragment_message_me.xml
+3.set=ANDROID_RESOURCE
+1.base=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_
+9.base=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_
+4.file=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_/res/layout/activity_main.xml
+8.set=ANDROID_RESOURCE
+0.set=DEX

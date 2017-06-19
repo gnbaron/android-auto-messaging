@@ -24,21 +24,9 @@
     android:paddingTop="@dimen/activity_vertical_margin">
 
     <Button
-        android:id="@+id/send_1_conversation"
+        android:id="@+id/start_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/send_1_conversation"/>
-
-    <Button
-        android:id="@+id/send_2_conversations"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/send_2_conversations"/>
-
-    <Button
-        android:id="@+id/send_1_conversation_3_messages"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/send_1_conv_3_messages"/>
+        android:text="@string/start_btn" />
 
 </LinearLayout>

@@ -136,12 +136,9 @@ containing a value of this type.
         public static final int notification_icon=0x7f020002;
     }
     public static final class id {
-        public static final int clear=0x7f090004;
         public static final int container=0x7f090000;
-        public static final int data_port=0x7f090005;
-        public static final int send_1_conversation=0x7f090001;
-        public static final int send_1_conversation_3_messages=0x7f090003;
-        public static final int send_2_conversations=0x7f090002;
+        public static final int send_1_conversation=0x7f090002;
+        public static final int start_btn=0x7f090001;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -149,12 +146,9 @@ containing a value of this type.
     }
     public static final class string {
         public static final int app_name=0x7f080000;
-        public static final int clear_log=0x7f080001;
-        public static final int replied=0x7f080002;
-        public static final int reply=0x7f080003;
-        public static final int send_1_conv_3_messages=0x7f080004;
-        public static final int send_1_conversation=0x7f080005;
-        public static final int send_2_conversations=0x7f080006;
+        public static final int replied=0x7f080001;
+        public static final int reply=0x7f080002;
+        public static final int start_btn=0x7f080003;
     }
     public static final class style {
         public static final int AppTheme=0x7f050000;

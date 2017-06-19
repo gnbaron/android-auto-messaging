@@ -32,36 +32,7 @@
             android:id="@+id/send_1_conversation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/send_1_conversation"/>
+            android:text="@string/start_btn"/>
 
-        <Button
-            android:id="@+id/send_2_conversations"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/send_2_conversations"/>
-
-        <Button
-            android:id="@+id/send_1_conversation_3_messages"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/send_1_conv_3_messages"/>
     </LinearLayout>
-    <RelativeLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="2">
-        <Button
-            android:id="@+id/clear"
-            android:layout_alignParentBottom="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/clear_log"/>
-
-        <TextView
-            android:id="@+id/data_port"
-            android:layout_above="@id/clear"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical"/>
-    </RelativeLayout>
 </LinearLayout>

@@ -235,17 +235,17 @@
                     "startLine": 15,
                     "startColumn": 4,
                     "startOffset": 1438,
-                    "endColumn": 48,
-                    "endOffset": 1482
+                    "endColumn": 46,
+                    "endOffset": 1480
                 },
                 "from": {
                     "file": "/home/guilherme/dev/android/android-auto-messaging/Application/src/main/res/values/strings.xml",
                     "position": {
-                        "startLine": 23,
+                        "startLine": 20,
                         "startColumn": 4,
-                        "startOffset": 1058,
-                        "endColumn": 48,
-                        "endOffset": 1102
+                        "startOffset": 805,
+                        "endColumn": 46,
+                        "endOffset": 847
                     }
                 }
             },
@@ -253,18 +253,18 @@
                 "to": {
                     "startLine": 16,
                     "startColumn": 4,
-                    "startOffset": 1487,
-                    "endColumn": 46,
-                    "endOffset": 1529
+                    "startOffset": 1485,
+                    "endColumn": 43,
+                    "endOffset": 1524
                 },
                 "from": {
                     "file": "/home/guilherme/dev/android/android-auto-messaging/Application/src/main/res/values/strings.xml",
                     "position": {
-                        "startLine": 18,
+                        "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 717,
-                        "endColumn": 46,
-                        "endOffset": 759
+                        "startOffset": 761,
+                        "endColumn": 43,
+                        "endOffset": 800
                     }
                 }
             },
@@ -272,18 +272,18 @@
                 "to": {
                     "startLine": 17,
                     "startColumn": 4,
-                    "startOffset": 1534,
+                    "startOffset": 1529,
                     "endColumn": 43,
-                    "endOffset": 1573
+                    "endOffset": 1568
                 },
                 "from": {
                     "file": "/home/guilherme/dev/android/android-auto-messaging/Application/src/main/res/values/strings.xml",
                     "position": {
-                        "startLine": 19,
+                        "startLine": 18,
                         "startColumn": 4,
-                        "startOffset": 764,
+                        "startOffset": 717,
                         "endColumn": 43,
-                        "endOffset": 803
+                        "endOffset": 756
                     }
                 }
             },
@@ -291,67 +291,10 @@
                 "to": {
                     "startLine": 18,
                     "startColumn": 4,
-                    "startOffset": 1578,
-                    "endColumn": 84,
-                    "endOffset": 1658
-                },
-                "from": {
-                    "file": "/home/guilherme/dev/android/android-auto-messaging/Application/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 973,
-                        "endColumn": 84,
-                        "endOffset": 1053
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1663,
-                    "endColumn": 81,
-                    "endOffset": 1740
-                },
-                "from": {
-                    "file": "/home/guilherme/dev/android/android-auto-messaging/Application/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 891,
-                        "endColumn": 81,
-                        "endOffset": 968
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1745,
-                    "endColumn": 82,
-                    "endOffset": 1823
-                },
-                "from": {
-                    "file": "/home/guilherme/dev/android/android-auto-messaging/Application/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 808,
-                        "endColumn": 82,
-                        "endOffset": 886
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 1828,
-                    "endLine": 22,
+                    "startOffset": 1573,
+                    "endLine": 19,
                     "endColumn": 12,
-                    "endOffset": 1912
+                    "endOffset": 1657
                 },
                 "from": {
                     "file": "/home/guilherme/dev/android/android-auto-messaging/Application/src/main/res/values/styles.xml",
@@ -367,12 +310,12 @@
             },
             {
                 "to": {
-                    "startLine": 23,
+                    "startLine": 20,
                     "startColumn": 4,
-                    "startOffset": 1917,
-                    "endLine": 29,
+                    "startOffset": 1662,
+                    "endLine": 26,
                     "endColumn": 12,
-                    "endOffset": 2326
+                    "endOffset": 2071
                 },
                 "from": {
                     "file": "/home/guilherme/.android/build-cache/c1a13a56b1cd954dc9c109295d0f50d80768d8c2/output/res/values/values.xml",
@@ -388,12 +331,12 @@
             },
             {
                 "to": {
-                    "startLine": 30,
+                    "startLine": 27,
                     "startColumn": 4,
-                    "startOffset": 2331,
-                    "endLine": 31,
+                    "startOffset": 2076,
+                    "endLine": 28,
                     "endColumn": 12,
-                    "endOffset": 2390
+                    "endOffset": 2135
                 },
                 "from": {
                     "file": "/home/guilherme/.android/build-cache/c1a13a56b1cd954dc9c109295d0f50d80768d8c2/output/res/values/values.xml",
@@ -409,12 +352,12 @@
             },
             {
                 "to": {
-                    "startLine": 32,
+                    "startLine": 29,
                     "startColumn": 4,
-                    "startOffset": 2395,
-                    "endLine": 34,
+                    "startOffset": 2140,
+                    "endLine": 31,
                     "endColumn": 12,
-                    "endOffset": 2516
+                    "endOffset": 2261
                 },
                 "from": {
                     "file": "/home/guilherme/.android/build-cache/c1a13a56b1cd954dc9c109295d0f50d80768d8c2/output/res/values/values.xml",
@@ -430,12 +373,12 @@
             },
             {
                 "to": {
-                    "startLine": 35,
+                    "startLine": 32,
                     "startColumn": 4,
-                    "startOffset": 2521,
-                    "endLine": 37,
+                    "startOffset": 2266,
+                    "endLine": 34,
                     "endColumn": 12,
-                    "endOffset": 2644
+                    "endOffset": 2389
                 },
                 "from": {
                     "file": "/home/guilherme/.android/build-cache/c1a13a56b1cd954dc9c109295d0f50d80768d8c2/output/res/values/values.xml",

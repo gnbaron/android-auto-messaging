@@ -36,11 +36,19 @@ public class MessageReplyReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        System.out.println("intent.getAction()) = "+intent.getAction());
         if (MessagingService.REPLY_ACTION.equals(intent.getAction())) {
             int conversationId = intent.getIntExtra(MessagingService.CONVERSATION_ID, -1);
             CharSequence reply = getMessageText(intent);
+            System.out.println("Reposta: "+ reply);
             if (conversationId != -1) {
                 Log.d(TAG, "Got reply (" + reply + ") for ConversationId " + conversationId);
+
+                if(reply.toString().equals("read")){
+
+                } else if(reply.toString().equals("next")){
+
+                }
 
                 // Update the notification to stop the progress spinner.
                 NotificationManagerCompat notificationManager =
@@ -56,11 +64,6 @@ public class MessageReplyReceiver extends BroadcastReceiver {
         }
     }
 
-    /**
-     * Get the message text from the intent.
-     * Note that you should call {@code RemoteInput#getResultsFromIntent(intent)} to process
-     * the RemoteInput.
-     */
     private CharSequence getMessageText(Intent intent) {
         Bundle remoteInput = RemoteInput.getResultsFromIntent(intent);
         if (remoteInput != null) {

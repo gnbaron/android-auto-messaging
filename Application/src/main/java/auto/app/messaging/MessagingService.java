@@ -76,19 +76,15 @@ public class MessagingService extends Service {
                 .putExtra(CONVERSATION_ID, conversationId);
     }
 
-    private void sendNotification(int howManyConversations, int messagesPerConversation) {
-        Conversations.Conversation[] conversations = Conversations.getUnreadConversations(
-                howManyConversations, messagesPerConversation);
-        for (Conversations.Conversation conv : conversations) {
-            sendNotificationForConversation(conv);
-        }
-    }
+    private void sendNotification(News news) {
+        int conversationId = 1;
+        String conversationName = "News Bot";
+        long conversationTimestamp = System.currentTimeMillis();
 
-    private void sendNotificationForConversation(Conversations.Conversation conversation) {
         // A pending Intent for reads
         PendingIntent readPendingIntent = PendingIntent.getBroadcast(getApplicationContext(),
-                conversation.getConversationId(),
-                getMessageReadIntent(conversation.getConversationId()),
+                conversationId,
+                getMessageReadIntent(conversationId),
                 PendingIntent.FLAG_UPDATE_CURRENT);
 
         // Build a RemoteInput for receiving voice input in a Car Notification or text input on
@@ -99,8 +95,8 @@ public class MessagingService extends Service {
 
         // Building a Pending Intent for the reply action to trigger
         PendingIntent replyIntent = PendingIntent.getBroadcast(getApplicationContext(),
-                conversation.getConversationId(),
-                getMessageReplyIntent(conversation.getConversationId()),
+                conversationId,
+                getMessageReplyIntent(conversationId),
                 PendingIntent.FLAG_UPDATE_CURRENT);
 
         // Build an Android N compatible Remote Input enabled action.
@@ -112,30 +108,27 @@ public class MessagingService extends Service {
         // Create the UnreadConversation and populate it with the participant name,
         // read and reply intents.
         UnreadConversation.Builder unreadConvBuilder =
-                new UnreadConversation.Builder(conversation.getParticipantName())
-                .setLatestTimestamp(conversation.getTimestamp())
+                new UnreadConversation.Builder(conversationName)
+                .setLatestTimestamp(conversationTimestamp)
                 .setReadPendingIntent(readPendingIntent)
                 .setReplyAction(replyIntent, remoteInput);
 
         // Note: Add messages from oldest to newest to the UnreadConversation.Builder
         StringBuilder messageForNotification = new StringBuilder();
-        for (Iterator<String> messages = conversation.getMessages().iterator();
-             messages.hasNext(); ) {
-            String message = messages.next();
-            unreadConvBuilder.addMessage(message);
-            messageForNotification.append(message);
-            if (messages.hasNext()) {
-                messageForNotification.append(EOL);
-            }
-        }
+        messageForNotification.append(news.getTitle());
+        messageForNotification.append(EOL);
+        messageForNotification.append("Responda com \"LER\" para ouvir o artigo completo, \"PRÓXIMA\" ou \"SAIR\".");
+
+        String message = messageForNotification.toString();
+        unreadConvBuilder.addMessage(message);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext())
                 .setSmallIcon(auto.app.messaging.R.drawable.notification_icon)
                 .setLargeIcon(BitmapFactory.decodeResource(
                         getApplicationContext().getResources(), auto.app.messaging.R.drawable.android_contact))
-                .setContentText(messageForNotification.toString())
-                .setWhen(conversation.getTimestamp())
-                .setContentTitle(conversation.getParticipantName())
+                .setContentText(message)
+                .setWhen(conversationTimestamp)
+                .setContentTitle(conversationName)
                 .setContentIntent(readPendingIntent)
                 .extend(new CarExtender()
                         .setUnreadConversation(unreadConvBuilder.build())
@@ -143,7 +136,7 @@ public class MessagingService extends Service {
                                 .getColor(auto.app.messaging.R.color.default_color_light)))
                 .addAction(actionReplyByRemoteInput);
 
-        mNotificationManager.notify(conversation.getConversationId(), builder.build());
+        mNotificationManager.notify(conversationId, builder.build());
     }
 
     /**
@@ -161,10 +154,8 @@ public class MessagingService extends Service {
             MessagingService service = mReference.get();
             switch (msg.what) {
                 case MSG_SEND_NOTIFICATION:
-                    int howManyConversations = msg.arg1 <= 0 ? 1 : msg.arg1;
-                    int messagesPerConversation = msg.arg2 <= 0 ? 1 : msg.arg2;
                     if (service != null) {
-                        service.sendNotification(howManyConversations, messagesPerConversation);
+                        service.sendNotification((News) msg.obj);
                     }
                     break;
                 default:

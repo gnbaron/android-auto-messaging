@@ -32,64 +32,60 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class AppFragment extends Fragment implements View.OnClickListener {
 
     private static final String TAG = AppFragment.class.getSimpleName();
-
-    private Button mSendSingleConversation;
-    private Button mSendTwoConversations;
-    private Button mSendConversationWithThreeMessages;
-
+    private Button startBtn;
     private Messenger mService;
     private boolean mBound;
+    private List<News> news;
 
     private final ServiceConnection mConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder service) {
             mService = new Messenger(service);
             mBound = true;
-            setButtonsState(true);
+            startBtn.setEnabled(true);
         }
 
         @Override
         public void onServiceDisconnected(ComponentName componentName) {
             mService = null;
             mBound = false;
-            setButtonsState(false);
+            startBtn.setEnabled(false);
         }
     };
-
-    public AppFragment() { }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(auto.app.messaging.R.layout.fragment_message_me, container, false);
 
-        mSendSingleConversation = (Button) rootView.findViewById(auto.app.messaging.R.id.send_1_conversation);
-        mSendSingleConversation.setOnClickListener(this);
+        startBtn = (Button) rootView.findViewById(auto.app.messaging.R.id.start_btn);
+        startBtn.setOnClickListener(this);
+        startBtn.setEnabled(false);
 
-        mSendTwoConversations = (Button) rootView.findViewById(auto.app.messaging.R.id.send_2_conversations);
-        mSendTwoConversations.setOnClickListener(this);
-
-        mSendConversationWithThreeMessages =
-                (Button) rootView.findViewById(auto.app.messaging.R.id.send_1_conversation_3_messages);
-        mSendConversationWithThreeMessages.setOnClickListener(this);
-
-        setButtonsState(false);
+        searchNews();
 
         return rootView;
     }
 
     @Override
-    public void onClick(View view) {
-        if (view == mSendSingleConversation) {
-            dispatchAction(1, 1);
-        } else if (view == mSendTwoConversations) {
-            dispatchAction(2, 1);
-        } else if (view == mSendConversationWithThreeMessages) {
-            dispatchAction(1, 3);
-        }
+    public void onResume() {
+        super.onResume();
+        searchNews();
     }
 
     @Override
@@ -108,9 +104,9 @@ public class AppFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private void dispatchAction(int howManyConversations, int messagesPerConversation) {
+    private void dispatchMessage(News news) {
         if (mBound) {
-            Message msg = Message.obtain(null, MessagingService.MSG_SEND_NOTIFICATION, howManyConversations, messagesPerConversation);
+            Message msg = Message.obtain(null, MessagingService.MSG_SEND_NOTIFICATION, news);
             try {
                 mService.send(msg);
             } catch (RemoteException e) {
@@ -119,9 +115,51 @@ public class AppFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private void setButtonsState(boolean enable) {
-        mSendSingleConversation.setEnabled(enable);
-        mSendTwoConversations.setEnabled(enable);
-        mSendConversationWithThreeMessages.setEnabled(enable);
+    @Override
+    public void onClick(View view) {
+        if (view == startBtn && news != null && news.size() > 0) {
+            dispatchMessage(news.get(0));
+        }
+    }
+
+    private void searchNews() {
+        /*
+        String url = "https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=ad13989aa3694667a102596ba285e15c";
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        news = new ArrayList<>();
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            JSONArray articles = jsonObject.getJSONArray("articles");
+                            for(int i = 0; i < articles.length(); i ++) {
+                                JSONObject article = articles.getJSONObject(i);
+                                News newsModel = new News();
+                                newsModel.setAuthor(article.getString("author"));
+                                newsModel.setTitle(article.getString("title"));
+                                newsModel.setDescription(article.getString("description"));
+                                news.add(newsModel);
+                            }
+                        } catch (JSONException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e(TAG, "Error sending a message", error);
+                    }
+                }
+        );
+        RequestSingleton.getInstance(this.getContext()).addToRequestQueue(stringRequest);
+        */
+        news = new ArrayList<>();
+        News n1 = new News();
+        n1.setAuthor("G1");
+        n1.setTitle("Trio é preso com drone para enviar drogas e celulares a presídio.");
+        n1.setDescription("Três jovens foram presos e um menor apreendido tentando lançar drogas, celulares e serras para dentro da Casa de Prisão Provisória de Palmas. O detalhe é que eles estavam usando um drone para entregar os objetos aos presos, no pátio da cadeia. A ação deles foi frustrada na noite deste sábado (17).");
+        news.add(n1);
     }
 }

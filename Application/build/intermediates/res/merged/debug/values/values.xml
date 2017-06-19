@@ -13,12 +13,9 @@
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
     <string name="app_name">Android Auto App</string>
-    <string name="clear_log">Limpar Log</string>
     <string name="replied">Respondido</string>
     <string name="reply">Responder</string>
-    <string name="send_1_conv_3_messages">Enviar 1 conversas com 3 mensagem</string>
-    <string name="send_1_conversation">Enviar 1 conversas com 1 mensagem</string>
-    <string name="send_2_conversations">Enviar 2 conversas com 1 mensagem</string>
+    <string name="start_btn">Start</string>
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
     </style>
     <style name="Base.CardView" parent="android:Widget">
