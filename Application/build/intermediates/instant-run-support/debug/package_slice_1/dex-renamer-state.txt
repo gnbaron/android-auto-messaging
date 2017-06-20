@@ -1,4 +1,0 @@
-#Tue Jun 20 13:19:13 BRT 2017
-base.0=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1
-renamed.0=classes.dex
-file.0=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex

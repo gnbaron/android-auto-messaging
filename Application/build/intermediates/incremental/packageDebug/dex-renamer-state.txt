@@ -1,7 +1,0 @@
-#Tue Jun 20 13:19:13 BRT 2017
-base.0=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_7090d63c411e70891d8930a5758b21438754d30b
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_5d9e4f9dccfcd1c5e243936957cdb7978e71a6da/classes.dex
-base.1=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_5d9e4f9dccfcd1c5e243936957cdb7978e71a6da
-file.0=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_7090d63c411e70891d8930a5758b21438754d30b/classes.dex
