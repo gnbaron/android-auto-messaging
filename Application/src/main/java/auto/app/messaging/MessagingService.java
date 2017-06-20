@@ -84,7 +84,7 @@ public class MessagingService extends Service {
 
         List<String> messages = new ArrayList<>();
         messages.add("Olá! Sou seu aplicativo de notícias, deseja ouvir algumas notícias?");
-        messages.add("Responsa com \"SIM\" ou \"Não\"");
+        messages.add("Responda com \"SIM\" ou \"Não\"");
 
         //StringBuilder messageForNotification = new StringBuilder();
         //messageForNotification.append(article.getTitle());

@@ -40,7 +40,6 @@ public class MessageReplyReceiver extends BroadcastReceiver {
         if (MessagingService.REPLY_ACTION.equals(intent.getAction())) {
             int conversationId = intent.getIntExtra(MessagingService.CONVERSATION_ID, -1);
             CharSequence reply = getMessageText(intent);
-            System.out.println("Reposta: "+ reply);
             if (conversationId != -1) {
                 Log.d(TAG, "Got reply (" + reply + ") for ConversationId " + conversationId);
 

@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="cedeca1d77d3e0187128958e10144e8d400955ad">
+        sha1="0f41022b6b0f9ba31ba81086f6bf987aa1d93d7f">
         <dex dex="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_5d9e4f9dccfcd1c5e243936957cdb7978e71a6da/classes.dex" />
     </item>
     <item
