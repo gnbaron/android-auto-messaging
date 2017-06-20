@@ -16,70 +16,115 @@
 
 package auto.app.messaging;
 
-import android.app.Notification;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.app.RemoteInput;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
-import static auto.app.messaging.MessagingService.*;
 /**
  * A receiver that gets called when a reply is sent to a given conversationId.
  */
 public class MessageReplyReceiver extends BroadcastReceiver {
 
     private static final String TAG = MessageReplyReceiver.class.getSimpleName();
+    private static final String YES = "sim";
+    private static final String NO = "não";
+    private static final String READ = "ler";
+    private static final String NEXT = "próxima";
+    private static final String EXIT = "sair";
 
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        CharSequence reply = getMessageText(intent);
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
+        String reply = getMessageText(intent).toString().toLowerCase();
+        Log.d(TAG, "Got reply ("+reply+") on Receiver");
 
-        if(MessagingService.REPLY_WELCOME_ACTION.equals(intent.getAction())){
-            Log.d(TAG, "Got reply ("+reply+") for welcome action");
-            if(reply.toString().toLowerCase().equals("sim")){
+        if(MessagingService.REPLY_WELCOME_ACTION.equals(intent.getAction())) {
+
+            if(reply.equals(NO))
+                clear(context, intent.getIntExtra(MessagingService.CONVERSATION_ID, -1));
+            else if(reply.equals(YES)) {
                 ArticleList articles = (ArticleList) intent.getSerializableExtra("news");
+                sendNextArticle(context, articles);
+            } else
+                Log.e(TAG, "Unrecognized command.");
 
-            } else if(reply.toString().toLowerCase().equals("não")){
-                notificationManager.cancel(intent.getIntExtra(MessagingService.CONVERSATION_ID, -1));
-            }
         } else if (MessagingService.REPLY_ACTION.equals(intent.getAction())) {
-            /*
-            if(reply.toString().equals("read")){
 
-            } else if(reply.toString().equals("next")){
-
-            }
-            */
-
-            //StringBuilder messageForNotification = new StringBuilder();
-            //messageForNotification.append(article.getTitle());
-            //messageForNotification.append(EOL);
-            //messageForNotification.append("Responda com \"LER\" para ouvir o artigo completo, \"PRÓXIMA\" ou \"SAIR\".");
-
-            // Update the notification to stop the progress spinner.
-
-            Notification repliedNotification = new NotificationCompat.Builder(context)
-                    .setSmallIcon(auto.app.messaging.R.drawable.notification_icon)
-                    .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), auto.app.messaging.R.drawable.android_contact))
-                    .setContentText(context.getString(auto.app.messaging.R.string.replied))
-                    .build();
-
-            notificationManager.notify(intent.getIntExtra(MessagingService.CONVERSATION_ID, -1), repliedNotification);
+            if(reply.equals(READ)) {
+                Article article = (Article) intent.getSerializableExtra("article");
+                ArticleList news = (ArticleList) intent.getSerializableExtra("news");
+                readFullArticle(context, article, news);
+            } else if(reply.equals(NEXT)) {
+                ArticleList articles = (ArticleList) intent.getSerializableExtra("news");
+                sendNextArticle(context, articles);
+            } else if(reply.equals(EXIT)) {
+                clear(context, intent.getIntExtra(MessagingService.CONVERSATION_ID, -1));
+            } else
+                Log.e(TAG, "Unrecognized command.");
         }
+    }
+
+    private void sendNextArticle(Context context, ArticleList articles) {
+
+        Log.d(TAG, "Número de artigos "+articles.data.size());
+        Article next = articles.getNext();
+        Log.d(TAG, "Número de artigos depois "+articles.data.size());
+
+        if(next != null) {
+            Intent replyContent = MessagingService.getReplyIntent(MessagingService.REPLY_ACTION)
+                .putExtra("news", articles)
+                .putExtra("article", next);
+
+            MessagingService.sendNotification(
+                context,
+                MessagingService.getPendindIntent(context, replyContent),
+                next.getTitle(),
+                "Responda com \"LER\" para ouvir o artigo completo, \"PRÓXIMA\" ou \"SAIR\"."
+            );
+        } else
+            sendEmptyDataNotification(context);
+    }
+
+    private void readFullArticle(Context context, Article article, ArticleList news) {
+        if(article != null) {
+            Intent replyContent = MessagingService.getReplyIntent(MessagingService.REPLY_ACTION)
+                .putExtra("news", news);
+
+            MessagingService.sendNotification(
+                context,
+                MessagingService.getPendindIntent(context, replyContent),
+                "Notícia publicada por " + article.getAuthor() + ".",
+                article.getDescription(),
+                "Fim.",
+                "Responda com \"PRÓXIMA\" para ouvir as próximas notícias ou \"SAIR\"."
+            );
+        } else
+            sendNextArticle(context, news);
+    }
+
+    private void sendEmptyDataNotification(Context context) {
+        MessagingService.sendNotification(
+            context,
+            MessagingService.getPendindIntent(context, MessagingService.getReplyIntent(MessagingService.REPLY_ACTION)),
+            "Não há mais notícias.",
+            "Até amanhã!"
+        );
+    }
+
+    private void clear(Context context, int id) {
+        Log.d(TAG, "Clear all notifications");
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
+        notificationManager.cancel(id);
     }
 
     private CharSequence getMessageText(Intent intent) {
         Bundle remoteInput = RemoteInput.getResultsFromIntent(intent);
         if (remoteInput != null) {
-            return remoteInput.getCharSequence(
-                    MessagingService.EXTRA_REMOTE_REPLY);
+            return remoteInput.getCharSequence(MessagingService.EXTRA_REMOTE_REPLY);
         }
         return null;
     }

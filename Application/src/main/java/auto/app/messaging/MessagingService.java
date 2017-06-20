@@ -63,7 +63,8 @@ public class MessagingService extends Service {
         sendNotification(
             getApplicationContext(),
             getPendindIntent(getApplicationContext(), replyContent),
-            "Olá! Sou seu aplicativo de notícias, deseja ouvir algumas notícias?",
+            "Olá! Sou seu aplicativo de notícias.",
+            "Deseja ouvir algumas notícias?",
             "Responda com \"SIM\" ou \"Não\""
         );
     }

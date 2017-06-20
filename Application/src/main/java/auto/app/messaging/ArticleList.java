@@ -9,4 +9,10 @@ public class ArticleList implements Serializable {
     public ArticleList(List<Article> data) {
         this.data = data;
     }
+
+    public Article getNext() {
+        if(data.size() > 0)
+            return data.remove(0);
+        return null;
+    }
 }
