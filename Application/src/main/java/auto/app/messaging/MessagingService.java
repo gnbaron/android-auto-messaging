@@ -32,7 +32,9 @@ import android.support.v4.app.RemoteInput;
 import android.util.Log;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class MessagingService extends Service {
     private static final String TAG = MessagingService.class.getSimpleName();
@@ -42,11 +44,10 @@ public class MessagingService extends Service {
     public static final String EXTRA_REMOTE_REPLY = "extra_remote_reply";
 
     private static final String EOL = "\n";
-    public static final int MSG_SEND_NOTIFICATION = 1;
+    private static final String CONVERSATION_NAME = "News Bot";
+    private static final int CONVERSATION_NUMBER_ID = 1;
 
     private NotificationManagerCompat mNotificationManager;
-
-    private final Messenger mMessenger = new Messenger(new IncomingHandler(this));
 
     @Override
     public void onCreate() {
@@ -57,7 +58,40 @@ public class MessagingService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         Log.d(TAG, "onBind");
-        return mMessenger.getBinder();
+        return null;
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.i(TAG, "Service onStartCommand");
+        ArticleList articles = (ArticleList) intent.getSerializableExtra("news");
+        sendWelcome(articles);
+        return Service.START_STICKY;
+    }
+
+    private void sendWelcome(ArticleList articles) {
+
+        Intent replyContent = new Intent()
+                .addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES)
+                .setAction(REPLY_ACTION)
+                .putExtra(CONVERSATION_ID, CONVERSATION_NUMBER_ID)
+                .putExtra("news", articles);
+
+        PendingIntent replyIntent = PendingIntent.getBroadcast(
+                getApplicationContext(), CONVERSATION_NUMBER_ID,
+                replyContent, PendingIntent.FLAG_UPDATE_CURRENT
+        );
+
+        List<String> messages = new ArrayList<>();
+        messages.add("Olá! Sou seu aplicativo de notícias, deseja ouvir algumas notícias?");
+        messages.add("Responda com \"SIM\" ou \"Não\"");
+
+        //StringBuilder messageForNotification = new StringBuilder();
+        //messageForNotification.append(article.getTitle());
+        //messageForNotification.append(EOL);
+        //messageForNotification.append("Responda com \"LER\" para ouvir o artigo completo, \"PRÓXIMA\" ou \"SAIR\".");
+
+        sendNotification(messages, replyIntent);
     }
 
     // Creates an intent that will be triggered when a message is marked as read.
@@ -76,29 +110,29 @@ public class MessagingService extends Service {
                 .putExtra(CONVERSATION_ID, conversationId);
     }
 
-    private void sendNotification(News news) {
-        int conversationId = 1;
-        String conversationName = "News Bot";
-        long conversationTimestamp = System.currentTimeMillis();
+    private void sendNotification(List<String> messages, PendingIntent replyIntent) {
 
+        long timestamp = System.currentTimeMillis();
+
+        // TODO a princípio não vai ser usada
         // A pending Intent for reads
-        PendingIntent readPendingIntent = PendingIntent.getBroadcast(getApplicationContext(),
-                conversationId,
-                getMessageReadIntent(conversationId),
-                PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent readPendingIntent = PendingIntent.getBroadcast(getApplicationContext(), CONVERSATION_NUMBER_ID,
+                getMessageReadIntent(CONVERSATION_NUMBER_ID), PendingIntent.FLAG_UPDATE_CURRENT);
+
 
         // Build a RemoteInput for receiving voice input in a Car Notification or text input on
         // devices that support text input (like devices on Android N and above).
-        RemoteInput remoteInput = new RemoteInput.Builder(EXTRA_REMOTE_REPLY)
-                .setLabel(getString(auto.app.messaging.R.string.reply))
-                .build();
 
+
+        /* TODO recebido como parãmetro
         // Building a Pending Intent for the reply action to trigger
         PendingIntent replyIntent = PendingIntent.getBroadcast(getApplicationContext(),
-                conversationId,
-                getMessageReplyIntent(conversationId),
+                CONVERSATION_NUMBER_ID,
+                getMessageReplyIntent(CONVERSATION_NUMBER_ID),
                 PendingIntent.FLAG_UPDATE_CURRENT);
+        */
 
+        RemoteInput remoteInput = new RemoteInput.Builder(EXTRA_REMOTE_REPLY).setLabel(getString(auto.app.messaging.R.string.reply)).build();
         // Build an Android N compatible Remote Input enabled action.
         NotificationCompat.Action actionReplyByRemoteInput = new NotificationCompat.Action.Builder(
                 auto.app.messaging.R.drawable.notification_icon, getString(auto.app.messaging.R.string.reply), replyIntent)
@@ -108,59 +142,30 @@ public class MessagingService extends Service {
         // Create the UnreadConversation and populate it with the participant name,
         // read and reply intents.
         UnreadConversation.Builder unreadConvBuilder =
-                new UnreadConversation.Builder(conversationName)
-                .setLatestTimestamp(conversationTimestamp)
+                new UnreadConversation.Builder(CONVERSATION_NAME)
+                .setLatestTimestamp(timestamp)
                 .setReadPendingIntent(readPendingIntent)
-                .setReplyAction(replyIntent, remoteInput);
+                .setReplyAction(replyIntent, remoteInput); //TODO testar para ver se não é preciso realmente usar uma read intent
 
-        // Note: Add messages from oldest to newest to the UnreadConversation.Builder
-        StringBuilder messageForNotification = new StringBuilder();
-        messageForNotification.append(news.getTitle());
-        messageForNotification.append(EOL);
-        messageForNotification.append("Responda com \"LER\" para ouvir o artigo completo, \"PRÓXIMA\" ou \"SAIR\".");
-
-        String message = messageForNotification.toString();
-        unreadConvBuilder.addMessage(message);
+        StringBuilder message = new StringBuilder();
+        for(String m : messages) {
+            unreadConvBuilder.addMessage(m);
+            message.append(m);
+            message.append(EOL);
+        }
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext())
                 .setSmallIcon(auto.app.messaging.R.drawable.notification_icon)
-                .setLargeIcon(BitmapFactory.decodeResource(
-                        getApplicationContext().getResources(), auto.app.messaging.R.drawable.android_contact))
-                .setContentText(message)
-                .setWhen(conversationTimestamp)
-                .setContentTitle(conversationName)
-                .setContentIntent(readPendingIntent)
+                .setLargeIcon(BitmapFactory.decodeResource(getApplicationContext().getResources(), auto.app.messaging.R.drawable.android_contact))
+                .setContentText(message.toString())
+                .setWhen(timestamp)
+                .setContentTitle(CONVERSATION_NAME)
+                .setContentIntent(readPendingIntent) //TODO não vai ter read intent eu acho
                 .extend(new CarExtender()
                         .setUnreadConversation(unreadConvBuilder.build())
-                        .setColor(getApplicationContext().getResources()
-                                .getColor(auto.app.messaging.R.color.default_color_light)))
-                .addAction(actionReplyByRemoteInput);
+                        .setColor(getApplicationContext().getResources().getColor(auto.app.messaging.R.color.default_color_light)))
+                .addAction(actionReplyByRemoteInput); // TODO ver se funciona a reply intent
 
-        mNotificationManager.notify(conversationId, builder.build());
-    }
-
-    /**
-     * Handler for incoming messages from clients.
-     */
-    private static class IncomingHandler extends Handler {
-        private final WeakReference<MessagingService> mReference;
-
-        IncomingHandler(MessagingService service) {
-            mReference = new WeakReference<>(service);
-        }
-
-        @Override
-        public void handleMessage(Message msg) {
-            MessagingService service = mReference.get();
-            switch (msg.what) {
-                case MSG_SEND_NOTIFICATION:
-                    if (service != null) {
-                        service.sendNotification((News) msg.obj);
-                    }
-                    break;
-                default:
-                    super.handleMessage(msg);
-            }
-        }
+        mNotificationManager.notify(CONVERSATION_NUMBER_ID, builder.build());
     }
 }

@@ -40,23 +40,22 @@ public class MessageReplyReceiver extends BroadcastReceiver {
         if (MessagingService.REPLY_ACTION.equals(intent.getAction())) {
             int conversationId = intent.getIntExtra(MessagingService.CONVERSATION_ID, -1);
             CharSequence reply = getMessageText(intent);
-            System.out.println("Reposta: "+ reply);
             if (conversationId != -1) {
                 Log.d(TAG, "Got reply (" + reply + ") for ConversationId " + conversationId);
 
+                /*
                 if(reply.toString().equals("read")){
 
                 } else if(reply.toString().equals("next")){
 
                 }
+                */
 
                 // Update the notification to stop the progress spinner.
-                NotificationManagerCompat notificationManager =
-                        NotificationManagerCompat.from(context);
+                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
                 Notification repliedNotification = new NotificationCompat.Builder(context)
                         .setSmallIcon(auto.app.messaging.R.drawable.notification_icon)
-                        .setLargeIcon(BitmapFactory.decodeResource(
-                                context.getResources(), auto.app.messaging.R.drawable.android_contact))
+                        .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), auto.app.messaging.R.drawable.android_contact))
                         .setContentText(context.getString(auto.app.messaging.R.string.replied))
                         .build();
                 notificationManager.notify(conversationId, repliedNotification);

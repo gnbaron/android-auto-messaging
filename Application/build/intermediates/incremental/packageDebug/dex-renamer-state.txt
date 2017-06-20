@@ -1,4 +1,4 @@
-#Fri Jun 16 14:17:09 BRT 2017
+#Tue Jun 20 11:43:21 BRT 2017
 base.0=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_7090d63c411e70891d8930a5758b21438754d30b
 renamed.1=classes2.dex
 renamed.0=classes.dex

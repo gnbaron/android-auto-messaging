@@ -2,7 +2,7 @@ package auto.app.messaging;
 
 import java.io.Serializable;
 
-public class News implements Serializable {
+public class Article implements Serializable {
     private String title;
     private String author;
     private String description;

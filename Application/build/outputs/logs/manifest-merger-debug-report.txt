@@ -60,24 +60,24 @@ ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/ma
 		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:44:13-37
 	android:name
 		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:43:13-66
-intent-filter#com.example.android.messagingservice.ACTION_MESSAGE_READ
+intent-filter#auto.app.messaging.ACTION_MESSAGE_READ
 ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:45:13-47:29
-action#com.example.android.messagingservice.ACTION_MESSAGE_READ
-ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:46:17-98
+action#auto.app.messaging.ACTION_MESSAGE_READ
+ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:46:17-80
 	android:name
-		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:46:25-96
+		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:46:25-78
 receiver#auto.app.messaging.MessageReplyReceiver
 ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:50:9-56:20
 	android:exported
 		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:52:13-37
 	android:name
 		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:51:13-67
-intent-filter#com.example.android.messagingservice.ACTION_MESSAGE_REPLY
+intent-filter#auto.app.messaging.ACTION_MESSAGE_REPLY
 ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:53:13-55:29
-action#com.example.android.messagingservice.ACTION_MESSAGE_REPLY
-ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:54:17-99
+action#auto.app.messaging.ACTION_MESSAGE_REPLY
+ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:54:17-81
 	android:name
-		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:54:25-97
+		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:54:25-79
 uses-sdk
 INJECTED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:support-v13:25.1.1] /home/guilherme/.android/build-cache/5d36bd775919e73454d23ed3965014beb3979884/output/AndroidManifest.xml:21:5-23:55

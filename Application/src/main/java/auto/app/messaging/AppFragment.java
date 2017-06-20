@@ -48,11 +48,9 @@ public class AppFragment extends Fragment implements View.OnClickListener {
 
     private static final String TAG = AppFragment.class.getSimpleName();
     private Button startBtn;
-    private Messenger mService;
-    private boolean mBound;
-    private List<News> news;
+    private ArticleList news;
 
-    private final ServiceConnection mConnection = new ServiceConnection() {
+    /*private final ServiceConnection mConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder service) {
             mService = new Messenger(service);
@@ -66,81 +64,46 @@ public class AppFragment extends Fragment implements View.OnClickListener {
             mBound = false;
             startBtn.setEnabled(false);
         }
-    };
+    };*/
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(auto.app.messaging.R.layout.fragment_message_me, container, false);
-
         startBtn = (Button) rootView.findViewById(auto.app.messaging.R.id.start_btn);
         startBtn.setOnClickListener(this);
-        startBtn.setEnabled(false);
-
-        searchNews();
-
+        startBtn.setEnabled(true);
+        searchArticle();
         return rootView;
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        searchNews();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        getActivity().bindService(new Intent(getActivity(), MessagingService.class), mConnection,
-                Context.BIND_AUTO_CREATE);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mBound) {
-            getActivity().unbindService(mConnection);
-            mBound = false;
-        }
-    }
-
-    private void dispatchMessage(News news) {
-        if (mBound) {
-            Message msg = Message.obtain(null, MessagingService.MSG_SEND_NOTIFICATION, news);
-            try {
-                mService.send(msg);
-            } catch (RemoteException e) {
-                Log.e(TAG, "Error sending a message", e);
-            }
-        }
-    }
-
-    @Override
     public void onClick(View view) {
-        if (view == startBtn && news != null && news.size() > 0) {
-            dispatchMessage(news.get(0));
+        if (view == startBtn && news != null && news.data.size() > 0) {
+            Intent serviceIntent = new Intent(getActivity(), MessagingService.class);
+            serviceIntent.putExtra("news", news);
+            getActivity().startService(serviceIntent);
         }
     }
 
-    private void searchNews() {
+    private void searchArticle() {
         /*
-        String url = "https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=ad13989aa3694667a102596ba285e15c";
+        String url = "https://Articleapi.org/v1/articles?source=bbc-Article&sortBy=top&apiKey=ad13989aa3694667a102596ba285e15c";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        news = new ArrayList<>();
+                        Article = new ArrayList<>();
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             JSONArray articles = jsonObject.getJSONArray("articles");
                             for(int i = 0; i < articles.length(); i ++) {
                                 JSONObject article = articles.getJSONObject(i);
-                                News newsModel = new News();
-                                newsModel.setAuthor(article.getString("author"));
-                                newsModel.setTitle(article.getString("title"));
-                                newsModel.setDescription(article.getString("description"));
-                                news.add(newsModel);
+                                Article articleModel = new Article();
+                                articleModel.setAuthor(article.getString("author"));
+                                articleModel.setTitle(article.getString("title"));
+                                articleModel.setDescription(article.getString("description"));
+                                article.add(articleModel);
                             }
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
@@ -155,11 +118,25 @@ public class AppFragment extends Fragment implements View.OnClickListener {
         );
         RequestSingleton.getInstance(this.getContext()).addToRequestQueue(stringRequest);
         */
-        news = new ArrayList<>();
-        News n1 = new News();
+        List<Article> articles = new ArrayList<>();
+        Article n1 = new Article();
         n1.setAuthor("G1");
         n1.setTitle("Trio é preso com drone para enviar drogas e celulares a presídio.");
-        n1.setDescription("Três jovens foram presos e um menor apreendido tentando lançar drogas, celulares e serras para dentro da Casa de Prisão Provisória de Palmas. O detalhe é que eles estavam usando um drone para entregar os objetos aos presos, no pátio da cadeia. A ação deles foi frustrada na noite deste sábado (17).");
-        news.add(n1);
+        n1.setDescription("Três jovens foram presos e um menor apreendido tentando lançar drogas, celulares e serras para dentro da Casa " +
+                "de Prisão Provisória de Palmas. O detalhe é que eles estavam usando um drone para entregar os objetos aos presos, no pátio da cadeia. " +
+                "A ação deles foi frustrada na noite deste sábado (17).");
+        Article n2 = new Article();
+        n2.setAuthor("G1");
+        n2.setTitle("Google endurece medidas para remover conteúdo extremista de YouTube.");
+        n2.setDescription("O Google, empresa da Alphabet, vai adotar mais medidas para identificar e remover conteúdo terrorista ou de " +
+                "violência extremista de sua plataforma de vídeos YouTube, informou a companhia neste domingo (19).");
+        articles.add(n2);
+        Article n3 = new Article();
+        n3.setAuthor("G1");
+        n3.setTitle("8 tecnologias que prometem mudar a forma como você paga contas.");
+        n3.setDescription("Caixas eletrônicos que mais parecem smartphones, com espessura fina, tela sensível ao toque e que liberem saques pelo celular. " +
+                "O cenário pode parecer um tanto futurista, mas esses terminais já foram desenvolvidos e estão prontos para chegar ao mercado.");
+        articles.add(n3);
+        news = new ArticleList(articles);
     }
 }

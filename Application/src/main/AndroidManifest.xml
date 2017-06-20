@@ -43,7 +43,7 @@
             android:name="auto.app.messaging.MessageReadReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.example.android.messagingservice.ACTION_MESSAGE_READ"/>
+                <action android:name="auto.app.messaging.ACTION_MESSAGE_READ"/>
             </intent-filter>
         </receiver>
 
@@ -51,7 +51,7 @@
             android:name="auto.app.messaging.MessageReplyReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.example.android.messagingservice.ACTION_MESSAGE_REPLY"/>
+                <action android:name="auto.app.messaging.ACTION_MESSAGE_REPLY"/>
             </intent-filter>
         </receiver>
     </application>
