@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Jun 16 14:17:04 BRT 2017
+#Tue Jun 20 13:19:07 BRT 2017
 2.base=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_
 5.file=/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/res/resources-debug.ap_/res/layout-land/fragment_message_me.xml
 5.set=ANDROID_RESOURCE

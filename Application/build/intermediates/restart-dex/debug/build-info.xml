@@ -6,43 +6,34 @@
     density="xhdpi"
     format="10"
     plugin-version="2.3.2"
-    timestamp="1497969800351"
+    timestamp="1497975684448"
     token="-6593185886740839201"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="350" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="6" />
     <task
         name="verifier"
-        duration="0" />
+        duration="11" />
 
+    <artifact
+        location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_9.apk"
+        type="SPLIT" />
     <artifact
         location="/home/guilherme/dev/android/android-auto-messaging/Application/build/outputs/apk/Application-debug.apk"
         type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1497969231581"
+        timestamp="1497975545311"
         verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/guilherme/dev/android/android-auto-messaging/Application/build/outputs/apk/Application-debug.apk"
-            type="SPLIT_MAIN" />
-        <artifact
-            location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_5.apk"
-            type="SPLIT" />
         <artifact
             location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
@@ -50,28 +41,43 @@
             location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
+            location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
             location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
             location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
             location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
+        <artifact
+            location="/home/guilherme/dev/android/android-auto-messaging/Application/build/outputs/apk/Application-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1497969800351"
+        timestamp="1497975684448"
         verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/guilherme/dev/android/android-auto-messaging/Application/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
         <artifact
             location="/home/guilherme/dev/android/android-auto-messaging/Application/build/outputs/apk/Application-debug.apk"
             type="SPLIT_MAIN" />

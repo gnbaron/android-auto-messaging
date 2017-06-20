@@ -27,6 +27,7 @@ import android.support.v4.app.RemoteInput;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import static auto.app.messaging.MessagingService.*;
 /**
  * A receiver that gets called when a reply is sent to a given conversationId.
  */
@@ -36,30 +37,41 @@ public class MessageReplyReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        System.out.println("intent.getAction()) = "+intent.getAction());
-        if (MessagingService.REPLY_ACTION.equals(intent.getAction())) {
-            int conversationId = intent.getIntExtra(MessagingService.CONVERSATION_ID, -1);
-            CharSequence reply = getMessageText(intent);
-            if (conversationId != -1) {
-                Log.d(TAG, "Got reply (" + reply + ") for ConversationId " + conversationId);
 
-                /*
-                if(reply.toString().equals("read")){
+        CharSequence reply = getMessageText(intent);
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
 
-                } else if(reply.toString().equals("next")){
+        if(MessagingService.REPLY_WELCOME_ACTION.equals(intent.getAction())){
+            Log.d(TAG, "Got reply ("+reply+") for welcome action");
+            if(reply.toString().toLowerCase().equals("sim")){
+                ArticleList articles = (ArticleList) intent.getSerializableExtra("news");
 
-                }
-                */
-
-                // Update the notification to stop the progress spinner.
-                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
-                Notification repliedNotification = new NotificationCompat.Builder(context)
-                        .setSmallIcon(auto.app.messaging.R.drawable.notification_icon)
-                        .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), auto.app.messaging.R.drawable.android_contact))
-                        .setContentText(context.getString(auto.app.messaging.R.string.replied))
-                        .build();
-                notificationManager.notify(conversationId, repliedNotification);
+            } else if(reply.toString().toLowerCase().equals("não")){
+                notificationManager.cancel(intent.getIntExtra(MessagingService.CONVERSATION_ID, -1));
             }
+        } else if (MessagingService.REPLY_ACTION.equals(intent.getAction())) {
+            /*
+            if(reply.toString().equals("read")){
+
+            } else if(reply.toString().equals("next")){
+
+            }
+            */
+
+            //StringBuilder messageForNotification = new StringBuilder();
+            //messageForNotification.append(article.getTitle());
+            //messageForNotification.append(EOL);
+            //messageForNotification.append("Responda com \"LER\" para ouvir o artigo completo, \"PRÓXIMA\" ou \"SAIR\".");
+
+            // Update the notification to stop the progress spinner.
+
+            Notification repliedNotification = new NotificationCompat.Builder(context)
+                    .setSmallIcon(auto.app.messaging.R.drawable.notification_icon)
+                    .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), auto.app.messaging.R.drawable.android_contact))
+                    .setContentText(context.getString(auto.app.messaging.R.string.replied))
+                    .build();
+
+            notificationManager.notify(intent.getIntExtra(MessagingService.CONVERSATION_ID, -1), repliedNotification);
         }
     }
 

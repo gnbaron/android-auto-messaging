@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:16:1-58:12
+ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:16:1-59:12
 	package
 		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:17:5-33
 	xmlns:android
@@ -10,7 +10,7 @@ ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/ma
 	android:name
 		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:19:22-64
 application
-ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:21:5-57:19
+ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:21:5-58:19
 MERGED from [com.android.support:support-v13:25.1.1] /home/guilherme/.android/build-cache/5d36bd775919e73454d23ed3965014beb3979884/output/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:25.1.1] /home/guilherme/.android/build-cache/d8472d45e46d1c5299a91ad5042288d5d322c95a/output/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-fragment:25.1.1] /home/guilherme/.android/build-cache/ebeeb6e6d980edf7209c7a4c3183ed83e8e07218/output/AndroidManifest.xml:25:5-20
@@ -60,24 +60,28 @@ ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/ma
 		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:44:13-37
 	android:name
 		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:43:13-66
-intent-filter#auto.app.messaging.ACTION_MESSAGE_READ
+intent-filter#auto.app.messaging.READ_ACTION
 ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:45:13-47:29
-action#auto.app.messaging.ACTION_MESSAGE_READ
-ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:46:17-80
+action#auto.app.messaging.READ_ACTION
+ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:46:17-72
 	android:name
-		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:46:25-78
+		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:46:25-70
 receiver#auto.app.messaging.MessageReplyReceiver
-ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:50:9-56:20
+ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:50:9-57:20
 	android:exported
 		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:52:13-37
 	android:name
 		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:51:13-67
-intent-filter#auto.app.messaging.ACTION_MESSAGE_REPLY
-ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:53:13-55:29
-action#auto.app.messaging.ACTION_MESSAGE_REPLY
-ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:54:17-81
+intent-filter#auto.app.messaging.REPLY_ACTION+auto.app.messaging.REPLY_WELCOME_ACTION
+ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:53:13-56:29
+action#auto.app.messaging.REPLY_ACTION
+ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:54:17-73
 	android:name
-		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:54:25-79
+		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:54:25-71
+action#auto.app.messaging.REPLY_WELCOME_ACTION
+ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:55:17-81
+	android:name
+		ADDED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml:55:25-79
 uses-sdk
 INJECTED from /home/guilherme/dev/android/android-auto-messaging/Application/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:support-v13:25.1.1] /home/guilherme/.android/build-cache/5d36bd775919e73454d23ed3965014beb3979884/output/AndroidManifest.xml:21:5-23:55

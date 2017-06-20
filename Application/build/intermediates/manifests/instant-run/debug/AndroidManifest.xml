@@ -49,14 +49,15 @@
             android:name="auto.app.messaging.MessageReadReceiver"
             android:exported="false" >
             <intent-filter>
-                <action android:name="auto.app.messaging.ACTION_MESSAGE_READ" />
+                <action android:name="auto.app.messaging.READ_ACTION" />
             </intent-filter>
         </receiver>
         <receiver
             android:name="auto.app.messaging.MessageReplyReceiver"
             android:exported="false" >
             <intent-filter>
-                <action android:name="auto.app.messaging.ACTION_MESSAGE_REPLY" />
+                <action android:name="auto.app.messaging.REPLY_ACTION" />
+                <action android:name="auto.app.messaging.REPLY_WELCOME_ACTION" />
             </intent-filter>
         </receiver>
 
