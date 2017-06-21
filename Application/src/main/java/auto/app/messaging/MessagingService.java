@@ -33,7 +33,7 @@ public class MessagingService extends Service {
 
     private static final String TAG = MessagingService.class.getSimpleName();
 
-    private static final String CONVERSATION_NAME = "News Bot";
+    private static final String CONVERSATION_NAME = "News Bot App";
     private static final int CONVERSATION_NUMBER = 9999;
     public static final String CONVERSATION_ID = "conversation_id";
     public static final String EXTRA_REMOTE_REPLY = "extra_remote_reply";
@@ -58,7 +58,7 @@ public class MessagingService extends Service {
 
     private void sendWelcome(ArticleList articles) {
         Intent replyContent = getReplyIntent(REPLY_WELCOME_ACTION)
-                .putExtra("news", articles);
+            .putExtra("news", articles);
 
         sendNotification(
             getApplicationContext(),
@@ -87,15 +87,17 @@ public class MessagingService extends Service {
         long timestamp = System.currentTimeMillis();
 
         RemoteInput remoteInput = new RemoteInput.Builder(EXTRA_REMOTE_REPLY).setLabel(context.getString(auto.app.messaging.R.string.reply)).build();
-        NotificationCompat.Action actionReplyByRemoteInput = new NotificationCompat.Action.Builder(
-                auto.app.messaging.R.drawable.notification_icon, context.getString(auto.app.messaging.R.string.reply), replyIntent)
-                .addRemoteInput(remoteInput)
-                .build();
+        NotificationCompat.Action actionReplyByRemoteInput =
+            new NotificationCompat.Action.Builder(
+                R.drawable.notification_icon, context.getString(auto.app.messaging.R.string.reply), replyIntent
+            )
+            .addRemoteInput(remoteInput)
+            .build();
 
         UnreadConversation.Builder unreadConvBuilder =
-                new UnreadConversation.Builder(CONVERSATION_NAME)
-                .setLatestTimestamp(timestamp)
-                .setReplyAction(replyIntent, remoteInput);
+            new UnreadConversation.Builder(CONVERSATION_NAME)
+            .setLatestTimestamp(timestamp)
+            .setReplyAction(replyIntent, remoteInput);
 
         StringBuilder message = new StringBuilder();
         for(String m : messages) {
@@ -105,15 +107,15 @@ public class MessagingService extends Service {
         }
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
-                .setSmallIcon(auto.app.messaging.R.drawable.notification_icon)
-                .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), auto.app.messaging.R.drawable.android_contact))
-                .setContentText(message.toString())
-                .setWhen(timestamp)
-                .setContentTitle(CONVERSATION_NAME)
-                .extend(new CarExtender()
-                        .setUnreadConversation(unreadConvBuilder.build())
-                        .setColor(context.getResources().getColor(auto.app.messaging.R.color.default_color_light)))
-                .addAction(actionReplyByRemoteInput);
+            .setSmallIcon(R.drawable.notification_icon)
+            .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), auto.app.messaging.R.drawable.notification_icon))
+            .setContentText(message.toString())
+            .setWhen(timestamp)
+            .setContentTitle(CONVERSATION_NAME)
+            .extend(new CarExtender()
+                    .setUnreadConversation(unreadConvBuilder.build())
+                    .setColor(context.getResources().getColor(auto.app.messaging.R.color.default_color_light)))
+            .addAction(actionReplyByRemoteInput);
 
         NotificationManagerCompat.from(context).notify(CONVERSATION_NUMBER, builder.build());
     }

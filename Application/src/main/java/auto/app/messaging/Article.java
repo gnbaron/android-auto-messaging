@@ -3,6 +3,7 @@ package auto.app.messaging;
 import java.io.Serializable;
 
 public class Article implements Serializable {
+
     private String title;
     private String author;
     private String description;
